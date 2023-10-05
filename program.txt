@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int[] arr = new int[2];
+        A obj = new A();
+        arr = obj.input();
+        
+        obj.add(arr[0],arr[1]);
+        obj.sub(arr[0],arr[1]);
+        obj.multiply(arr[0],arr[1]);
+        obj.divide(arr[0],arr[1]); 
+    }
+}
+
+class A {
+    
+    public int[] input() { 
+        int[] arr = new int[2];
+        int a,b;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a: ");
+        a = sc.nextInt();
+        System.out.println("a is "+a);
+        
+        System.out.print("Enter b: ");
+        b = sc.nextInt();
+        System.out.println("b is "+b);
+        
+        arr[0] = a;
+        arr[1] = b;
+        // for(int i=0; i<2;i++) {
+        //     arr[i] = sc.nextInt();
+        // }
+        
+        return arr;
+    }
+    
+    public void add(int a, int b) {
+        int sum = 0;
+        sum = a + b;
+        System.out.println(sum);
+    }
+    
+    public void sub(int a, int b) {
+        int diff = a - b;
+        diff = a - b;
+        System.out.println(diff);
+    }
+    
+    public void multiply(int a, int b) {
+        int product = a * b;
+        System.out.println(product);
+    }
+    
+    public void divide(int a, int b) {
+        float quotient = (float) a / b;
+        System.out.println(quotient);
+    }
+}
