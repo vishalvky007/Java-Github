@@ -14,6 +14,8 @@ class CalculateAverage {
         num2 = sc.nextFloat();
         System.out.print("Enter Number-3: ");
         num3 = sc.nextFloat();
+
+        sc.close();
     }
 
     public float average() {
