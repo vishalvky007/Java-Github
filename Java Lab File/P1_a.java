@@ -4,19 +4,17 @@
  *  37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
  */
 
- // Build an Array to store all two digits numbers
+ import java.util.Scanner;
 
 class PrimePairs {
-
-    int arr[] = 
 
     public boolean isPrime(int n) { 
         // Corner case 
         if (n <= 1) 
             return false; 
 
-        // Check from 2 to n-1 
-        for (int i = 2; i < n; i++) 
+        // Check from 2 to n/2 
+        for (int i = 2; i < n/2; i++) 
         {
             if (n % i == 0) 
                 return false;
@@ -24,52 +22,47 @@ class PrimePairs {
         return true; 
     } 
 
-    public void findPrimes() {
-        System.out.print("Two digit Primes numbers are: ");
-        for(int i=10;i<100;i++) {
-            if(isPrime(i)) {
-                if(reverse(i) == i)
-                {
-                    System.out.print(" "+i);
-                }
-            }
-        }
-        System.out.println();
-    }
-
-    public int r(int num) {
+	 public int reverse(int num) {
         int rev = 0;
         
         while(num >0) {
             rev = rev * 10 + num%10;
             num = num/10;
         }
-
+		
         return rev;
     }
 
-    // public void checkPair() {
+    public void printPrimePairs(int n) {
 
-    //      for(int i=10;i<100;i++) {
-    //         for(int j=10;j<100;j++) {
-    //             if(isPrime(i) ) {
-    //             System.out.print(" "+i);
-    //         }
-    //         }
-            
-    //     }
-    // }
-
-
-    
+		for(int i=10;i<=n;i++) {
+            if(isPrime(i)) {
+				int rev = reverse(i);
+                if(isPrime(rev)) {
+                    System.out.println(i+","+rev);
+                }
+            }
+        }
+    }   
 }
 
 public class P1_a {
     public static void main(String[] args) {
-        PrimePairs x = new PrimePairs();
-        x.findPrimes();
-        // System.out.println(x.reverse(12));
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the maximum value to search for prime pairs: ");
+        int n = sc.nextInt();
+		
+		PrimePairs x = new PrimePairs();
+		
+		if(n<=10) {
+			System.out.println("No Prime Pairs found!!!");
+		}
+		else {
+			System.out.println("Prime number pairs upto "+n+":");
+			x.printPrimePairs(n);
+		}
 
+		sc.close();
     }
 }
 
