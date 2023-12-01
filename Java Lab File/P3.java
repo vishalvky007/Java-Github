@@ -1,4 +1,4 @@
-public class P3 {
+class ArraysExample {
     // Function to demonstrate single-dimensional array
     void singleDimensionalArrayExample() {
         System.out.println("Single-Dimensional Array Example:");
@@ -56,7 +56,7 @@ public class P3 {
 
     public static void main(String[] args) {
 
-        P3 x = new P3();
+        ArraysExample x = new ArraysExample();
         x.singleDimensionalArrayExample();
         x.multiDimensionalArrayExample();
         x.raggedArrayExample();

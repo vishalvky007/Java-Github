@@ -3,7 +3,7 @@
  * auto-boxing and un-boxing
  */
 
-class P2 {
+public class P2 {
 	public static void main(String args[]) {
 
 		int i = 30;

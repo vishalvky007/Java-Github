@@ -1,10 +1,9 @@
-/* WAP to print prime number in pair like 13,31. */
-/* 
+/* WAP to print prime number in pair like 13,31.  
  * The prime numbers from 1 to 100 are: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 
- *  37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
+ * 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
  */
 
- import java.util.Scanner;
+import java.util.Scanner;
 
 class PrimePairs {
 
@@ -22,7 +21,7 @@ class PrimePairs {
         return true; 
     } 
 
-	 public int reverse(int num) {
+	public int reverse(int num) {
         int rev = 0;
         
         while(num >0) {
