@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+// ATM 
 import java.util.Scanner;
 
 class InsufficientBalanceException extends Exception {
@@ -44,19 +43,20 @@ class Account {
 }
 
 class ATM {
-    private Map<String, Account> accounts;
+    private Account[] accounts;
 
     public ATM() {
-        accounts = new HashMap<>();
         // Initialize accounts (for demonstration purposes)
-        accounts.put("123456", new Account("123456", "1234", 1000.0));
-        accounts.put("789012", new Account("789012", "5678", 500.0));
+        accounts = new Account[2];
+        accounts[0] = new Account("123456", "1234", 1000.0);
+        accounts[1] = new Account("789012", "5678", 500.0);
     }
 
     public Account authenticateUser(String accountNumber, String pin) {
-        Account account = accounts.get(accountNumber);
-        if (account != null && account.getPin().equals(pin)) {
-            return account;
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber) && account.getPin().equals(pin)) {
+                return account;
+            }
         }
         return null;
     }
