@@ -1,0 +1,7 @@
+/**
+ * Text
+ */
+public class Text {
+
+    
+}
