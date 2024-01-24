@@ -1,7 +1,0 @@
-/**
- * Text
- */
-public class Text {
-
-    
-}
