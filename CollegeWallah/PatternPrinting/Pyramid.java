@@ -1,4 +1,4 @@
-package CollegeWallah.PatternPrinting;
+package PatternPrinting;
 
 import java.util.Scanner;
 /*
