@@ -28,6 +28,15 @@ public class BasicsLinkedList {
     System.out.print(head.data + " ");
   }
 
+  public static int length(Node head) {
+    int count=0;
+    while(head!=null) {
+      count++;
+      head = head.next;
+    }
+    return count;
+  }
+
   public static class Node {
     int data; // value
     Node next; // address of next node
@@ -64,9 +73,10 @@ public class BasicsLinkedList {
       // temp = temp.next;
     // }
 
-    display(a);
-    recursiveDisplay(a);
-    reverseDisplay(a);
+    // display(a);
+    // recursiveDisplay(a);
+    // reverseDisplay(a);
+    System.err.println(length(a));
 
   }
 }
