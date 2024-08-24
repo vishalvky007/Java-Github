@@ -1,5 +1,4 @@
 package LinkedListInterview;
-
 /**
  * ReverseList
  */
@@ -13,6 +12,7 @@ public class ReverseList {
     }
   }
 
+  // Recursive approach 
   public static Node reverse(Node head) {
     if(head.next == null) return head;
     Node newHead = reverse(head.next);
@@ -20,6 +20,22 @@ public class ReverseList {
     head.next = null;
     return newHead;
   }
+
+  // Iterative approach
+  public static Node reverse2(Node head) {
+    Node prev = null;
+    Node after = null;
+    Node curr = head;
+
+    while(curr!=null) {
+      after = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = after;
+    }
+    return prev;
+  }
+
 
   public static void display(Node head) {
     if(head == null) {
@@ -49,7 +65,8 @@ public class ReverseList {
     d.next = e;
 
     display(a);
-    a = reverse(a);
+    // a = reverse(a);
+    a = reverse2(a);
     display(a);
   }
 }
